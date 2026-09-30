@@ -1,50 +1,33 @@
-# ECE 309 — Project 2 starter code
+# C++ Mini Conversation Harness
 
-This is the starter repo for Project 2 (see the spec for full details).
+A command-line conversation harness implemented in C++ for ECE 309 at NC State University. The project focuses on object-oriented design, state management, scripted conversations, sentinel detection, testing, and CMake-based builds.
 
-## What's provided vs. what's yours
+## Overview
 
-Everything under `include/model/`, `include/harness/`, `src/model_client.cpp`,
-`src/scripted_client.cpp`, `src/replay_client.cpp`, `src/harness.cpp`, and
-`src/main.cpp` is given, working code — read it, don't modify it.
+The program supports interactive and scripted multi-turn conversations while maintaining structured message history and detecting conversation-ending sentinel sequences.
 
-You write:
+Key functionality includes:
 
-- `include/core/message.h` (+ optional `src/message.cpp`)
-- `include/core/conversation.h` / `src/conversation.cpp`
-- `include/core/sentinel_scanner.h` / `src/sentinel_scanner.cpp`
-- `tests/p2/test_p2.cpp`
-- `docs/design-log-p2.md`
+- Structured message and conversation management
+- Scripted multi-turn conversations
+- Sentinel-based termination detection
+- Conversation transcript saving
+- Command-line execution
+- Automated testing
+- CMake-based build system
 
-## Build and run
+## My Implementation
+
+My work focused on the core conversation and message-processing components, including:
+
+- `Message` data structures
+- `Conversation` state management
+- `SentinelScanner` detection logic
+- Project 2 test suite
+- Design documentation
+
+## Build
 
 ```bash
 cmake -S . -B build
 cmake --build build
-```
-
-This builds two targets:
-
-- `./build/miniharness` — the interactive CLI
-- `./build/test_p2` — your test suite
-
-Try it once your `Conversation` and `SentinelScanner` compile:
-
-```bash
-./build/miniharness --script scripts/greeting.script --save transcript.txt
-```
-
-Press Ctrl-D on an empty line to end the conversation early.
-
-## Completed Project 2 work
-
-The student-implemented files are now filled in:
-
-- `include/core/message.h`
-- `include/core/conversation.h` and `src/conversation.cpp`
-- `include/core/sentinel_scanner.h` and `src/sentinel_scanner.cpp`
-- `tests/p2/test_p2.cpp`
-- `docs/design-log-p2.md`
-
-The test target contains 18 assert-based tests and is intended to be run with the
-AddressSanitizer/UndefinedBehaviorSanitizer flags already supplied by CMake.
