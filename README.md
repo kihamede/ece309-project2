@@ -31,3 +31,41 @@ My work focused on the core conversation and message-processing components, incl
 ```bash
 cmake -S . -B build
 cmake --build build
+```
+
+## Run
+
+Example scripted conversation:
+
+```bash
+./build/miniharness --script scripts/greeting.script
+```
+
+Save the resulting transcript:
+
+```bash
+./build/miniharness --script scripts/greeting.script --save transcript.txt
+```
+
+## Testing
+
+The project includes **18 assert-based tests** covering the student-implemented functionality.
+
+```bash
+./build/test_p2
+```
+
+The build configuration also supports AddressSanitizer and UndefinedBehaviorSanitizer checks for detecting memory and runtime issues.
+
+## Technologies
+
+- C++
+- CMake
+- Git / GitHub
+- Command-Line Development
+- Automated Testing
+- Object-Oriented Programming
+
+## What I Learned
+
+This project strengthened my experience with C++ class design, maintaining program state across multiple interactions, automated testing, build systems, and working within an existing multi-file codebase.
